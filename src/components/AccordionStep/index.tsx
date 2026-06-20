@@ -36,7 +36,7 @@ export const AccordionStep: React.FC<AccordionStepProps> = ({
 }) => {
   return (
     <Box sx={{
-      borderRadius: isExpanded ? 1.5 : 0, backgroundColor: isExpanded ? "#EDF4FF" : "transparent", borderBottom: '1px solid #1F1F1F', py: {
+      borderRadius: isExpanded ? 1.5 : 0, borderBottom: '1px solid #1F1F1F', py: {
         xs: 0.5,
         md: 1.5,
         lg: 2
@@ -55,6 +55,7 @@ export const AccordionStep: React.FC<AccordionStepProps> = ({
           cursor: 'pointer',
           p: 1,
           borderRadius: 1,
+          backgroundColor: isExpanded ? "#EDF4FF" : "transparent",
           '&:hover': { opacity: 0.8, backgroundColor: "#f0f6ff" }
         }}
       >
@@ -89,7 +90,7 @@ export const AccordionStep: React.FC<AccordionStepProps> = ({
       </Box>
 
       <Collapse in={isExpanded}>
-        <Box sx={{ pt: 3, pb: 2, px: 2 }}>
+        <Box sx={{ pt: 3, pb: 2, px: 2, backgroundColor: isExpanded ? "#EDF4FF" : "transparent", }}>
           {children}
         </Box>
       </Collapse>

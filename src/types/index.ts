@@ -1,4 +1,11 @@
-export type Category = 'cameras' | 'plan' | 'sensors' | 'extras';
+export const ProductCategory = {
+  CAMERAS: 'cameras',
+  PLAN: 'plan',
+  SENSORS: 'sensors',
+  EXTRAS: 'extras',
+} as const;
+
+export type ProductCategory = (typeof ProductCategory)[keyof typeof ProductCategory];
 
 export interface Variant {
   id: string;
@@ -17,7 +24,7 @@ export interface Product {
   discountBadge?: string;
   imageUrl: string;
   learnMoreUrl?: string;
-  category: Category;
+  category: ProductCategory;
   variants: Variant[];
   isSubscription?: boolean;
 }
